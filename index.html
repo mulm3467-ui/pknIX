@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suara Kita – Kemerdekaan Berpendapat | SMPIT Titian Ilmu</title>
+<style>
+:root{--bg:#f5f6fb;--cd:#fff;--tx:#1d2433;--mu:#5b6477;--pr:#4f46e5;--pb:#eef0ff;--ok:#15803d;--ob:#e6f7ec;--no:#b91c1c;--nb:#fdecec;--bd:#e1e4ee;--ac:#f59e0b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12141c;--cd:#1b1f2b;--tx:#eceff7;--mu:#a3abbd;--pr:#9a9bff;--pb:#262a45;--ok:#4ade80;--ob:#14301f;--no:#f87171;--nb:#3a1a1a;--bd:#2c3243}}
+:root[data-theme="dark"]{--bg:#12141c;--cd:#1b1f2b;--tx:#eceff7;--mu:#a3abbd;--pr:#9a9bff;--pb:#262a45;--ok:#4ade80;--ob:#14301f;--no:#f87171;--nb:#3a1a1a;--bd:#2c3243}
+*{box-sizing:border-box}html{scroll-padding-top:120px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--cd);border-bottom:1px solid var(--bd)}
+.top{display:flex;align-items:center;gap:10px;padding:8px 14px;font-weight:700}.top span:last-child{margin-left:auto;color:var(--pr)}
+#pg{height:5px;background:var(--bd)}#bar{height:100%;width:0;background:linear-gradient(90deg,var(--pr),var(--ac));transition:width .4s}
+nav{display:flex;gap:6px;overflow-x:auto;padding:8px 10px}nav button{flex:none;border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:99px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+nav button.on{background:var(--pr);color:#fff;border-color:var(--pr)}nav button.dn::after{content:" ✓";color:var(--ok)}nav button.on.dn::after{color:#fff}
+main{max-width:760px;margin:0 auto;padding:16px 14px 60px}section{display:none;animation:f .3s}section.on{display:block}@keyframes f{from{opacity:0;transform:translateY(8px)}}
+h2{margin:.2em 0 .4em}.card{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:14px 16px;margin:12px 0}
+.hero{text-align:center;padding:32px 16px;background:linear-gradient(135deg,var(--pb),var(--cd));border:1px solid var(--bd);border-radius:20px}
+.hero h1{margin:.2em 0;font-size:1.9rem}.big{font-size:3rem}.sch{display:inline-block;background:var(--pr);color:#fff;border-radius:99px;padding:4px 16px;font-weight:700}
+.btn,.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;border-radius:12px;border:1.5px solid var(--bd);background:var(--cd);color:var(--tx);font:inherit;cursor:pointer}
+.btn{background:var(--pr);color:#fff;border-color:var(--pr);text-align:center;font-weight:700;width:auto;display:inline-block;padding:10px 22px}
+.opt:hover{border-color:var(--pr)}.opt.ok{background:var(--ob);border-color:var(--ok)}.opt.no{background:var(--nb);border-color:var(--no)}
+.fb{display:none;margin-top:8px;padding:10px 12px;border-radius:10px;font-size:15px}.fb.show{display:block}.fb.g{background:var(--ob)}.fb.b{background:var(--nb)}
+input,textarea{width:100%;padding:10px;border-radius:10px;border:1.5px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+details{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:10px 14px;margin:8px 0}summary{cursor:pointer;font-weight:700}
+.g2{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.tag{background:var(--pb);color:var(--pr);border-radius:8px;padding:1px 8px;font-size:13px;font-weight:700}
+.row{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:14px}.row i{display:block;height:20px;border-radius:6px;background:var(--pr);min-width:4px}.row b{width:110px;flex:none;font-weight:600}
+.bdg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.bd{text-align:center;padding:14px 8px;border-radius:14px;border:1px solid var(--bd);background:var(--cd);filter:grayscale(1);opacity:.5}.bd.on{filter:none;opacity:1;border-color:var(--ac)}.bd div{font-size:2.2rem}
+.cert{text-align:center;border:4px double var(--ac);border-radius:16px;padding:22px;background:var(--cd)}.cert h3{font-size:1.6rem;margin:.3em 0;color:var(--pr)}
+#ts{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:8px 18px;border-radius:99px;opacity:0;transition:.3s;pointer-events:none;z-index:9}#ts.on{opacity:1}
+@media print{header,nav,.np{display:none!important}}
+</style></head><body>
+<header><div class="top"><span>🗣️</span><span>Suara Kita · SMPIT Titian Ilmu</span><span>⭐ <b id="pts">0</b></span></div><div id="pg"><div id="bar"></div></div><nav id="nv"></nav></header>
+<main>
+<section id="home"><div class="hero"><div class="big">🏫🗣️</div><span class="sch">SMPIT Titian Ilmu</span><h1>Suara Kita</h1><p>Pendidikan Pancasila · Kelas IX · Fase D<br><b>Kemerdekaan Berpendapat</b><br>Bentuk Penyampaian Pendapat &amp; Keterbukaan Informasi Publik</p>
+<input id="nm" placeholder="Tulis namamu dulu ✏️" style="max-width:320px;text-align:center"><p><button class="btn" onclick="go('tujuan')">Mulai Belajar 🚀</button></p></div>
+<div class="card">Ikuti 9 misi (ada tanda ✓ saat selesai), kumpulkan ⭐ poin dan badge, lalu cetak sertifikatmu!</div></section>
+
+<section id="tujuan"><h2>🎯 Tujuan Pembelajaran</h2>
+<div class="g2"><div class="card">1️⃣ Mengidentifikasi <b>bentuk-bentuk penyampaian pendapat</b>.</div><div class="card">2️⃣ Menjelaskan <b>sejauh mana keterbukaan informasi publik</b> di Indonesia.</div></div>
+<h3>💭 Apersepsi</h3><div id="ap"></div></section>
+
+<section id="materi"><h2>📖 Materi Interaktif</h2><p>Ketuk setiap kartu untuk membukanya.</p>
+<h3>A. Bentuk Penyampaian Pendapat</h3>
+<details><summary>🎤 Lisan</summary>Diskusi kelas, musyawarah, pidato, rapat OSIS, dan dialog/audiensi dengan pejabat. Sampaikan dengan sopan dan beralasan.</details>
+<details><summary>✍️ Tulisan</summary>Surat pembaca, artikel opini, surat terbuka, petisi, dan poster. Data dan sumber yang jelas membuat pendapat lebih kuat.</details>
+<details><summary>🪧 Aksi damai / unjuk rasa</summary>Diatur UU No. 9 Tahun 1998. Penyelenggara memberi <b>pemberitahuan tertulis kepada Polri paling lambat 3x24 jam</b> sebelumnya, dan aksi dilakukan tanpa kekerasan.</details>
+<details><summary>📱 Media digital</summary>Media sosial, blog, video, petisi daring. Patuhi etika bermedia: cek fakta, hindari hoaks, ujaran kebencian, dan pelanggaran UU ITE.</details>
+<details><summary>⚖️ Dasar hukum &amp; batasnya</summary>Dijamin Pasal 28E ayat (3) UUD 1945. Pasal 28J: harus menghormati hak orang lain, moral, nilai agama, keamanan, dan ketertiban umum.</details>
+<h3>B. Keterbukaan Informasi Publik</h3>
+<details><summary>📜 UU No. 14 Tahun 2008 (KIP)</summary>Setiap orang berhak memperoleh informasi publik (Pasal 28F UUD 1945). Badan publik wajib menyediakannya melalui <b>PPID</b> (Pejabat Pengelola Informasi dan Dokumentasi). Tujuannya: pemerintahan transparan, akuntabel, dan partisipasi warga meningkat.</details>
+<details><summary>🗂️ Jenis informasi publik</summary><b>Berkala</b> (diumumkan rutin, mis. laporan keuangan) · <b>Serta-merta</b> (menyangkut keselamatan, mis. peringatan bencana) · <b>Tersedia setiap saat</b> (mis. daftar informasi publik, prosedur layanan).</details>
+<details><summary>🔒 Informasi yang dikecualikan</summary>Hanya yang ketat dan terbatas, lewat <b>uji konsekuensi</b>: misalnya dapat menghambat penegakan hukum, membuka rahasia pribadi, atau membahayakan pertahanan negara.</details>
+<details><summary>🧭 Prosedur &amp; sejauh mana keterbukaannya</summary>Ajukan permohonan ke PPID → dijawab maksimal 10 hari kerja (dapat diperpanjang 7 hari kerja) → keberatan ke atasan PPID (maks. 30 hari kerja setelah ditolak) → sengketa ke Komisi Informasi.<br><b>Kesimpulan:</b> aturannya menjamin akses seluas-luasnya, tetapi pelaksanaannya belum merata di semua badan publik. Warga perlu aktif dan kritis.</details>
+<p><button class="btn" onclick="fin('materi')">Saya sudah membaca ✔️</button></p></section>
+
+<section id="eksplor"><h2>🔍 Aktivitas Eksplorasi</h2><p>Identifikasi <b>bentuk penyampaian pendapat</b> pada setiap kasus.</p><div id="ex"></div></section>
+
+<section id="lab"><h2>🧪 Laboratorium Maya: PPID Simulator</h2>
+<h3>Misi 1 · Pilah informasi</h3><div id="l1"></div>
+<h3>Misi 2 · Susun prosedur permohonan informasi</h3><p>Ketuk langkah secara <b>berurutan</b> dari awal.</p><div id="l2" class="card"></div></section>
+
+<section id="game"><h2>🎮 Mini Game: Detektif Data</h2>
+<div class="card"><b>Survei ilustrasi: 200 siswa memilih cara utama menyampaikan pendapat</b><div id="ch"></div></div><div id="gq"></div></section>
+
+<section id="lkpd"><h2>📝 Lembar Kerja Interaktif</h2><p>Isi jawabanmu lalu tekan <b>Periksa</b>.</p><div id="lk"></div></section>
+
+<section id="kuis"><h2>🧩 Kuis Adaptif</h2><p>Soal menyesuaikan jawabanmu: benar → makin sulit, salah → lebih mudah. 5 soal.</p><div id="kz"></div></section>
+
+<section id="simpul"><h2>📌 Kesimpulan</h2><div class="card"><ul>
+<li>Pendapat dapat disampaikan secara <b>lisan, tulisan, aksi damai, dan media digital</b>.</li>
+<li>Kemerdekaan berpendapat dijamin konstitusi, tetapi <b>bertanggung jawab</b> dan tidak melanggar hak orang lain.</li>
+<li>Pendapat yang kuat didukung <b>informasi yang benar</b>; UU KIP menjamin hak kita atas informasi publik.</li>
+<li>Informasi yang dikecualikan itu terbatas dan melalui uji konsekuensi; keterbukaan di lapangan masih perlu terus diawasi.</li></ul></div>
+<p><button class="btn" onclick="fin('simpul')">Saya paham ✔️</button></p></section>
+
+<section id="progres"><h2>📊 Progres Belajar</h2><div class="card" id="pr"></div></section>
+
+<section id="refleksi"><h2>💡 Refleksi</h2><div class="card"><p>Perasaanmu belajar hari ini?</p><div id="mo" style="font-size:2rem;display:flex;gap:10px"></div>
+<p>1. Bentuk penyampaian pendapat apa yang paling ingin kamu coba, dan mengapa?</p><textarea id="r1" rows="2"></textarea>
+<p>2. Informasi publik apa di sekitarmu yang ingin kamu ketahui?</p><textarea id="r2" rows="2"></textarea>
+<p><button class="btn" onclick="rf()">Simpan refleksi</button></p></div></section>
+
+<section id="badge"><h2>🏆 Badge &amp; Sertifikat</h2><div class="bdg" id="bg"></div><div id="ce" style="margin-top:14px"></div></section>
+</main><div id="ts"></div>
+<script>
+const $=s=>document.querySelector(s),el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const SEC=[["home","🏠","Beranda"],["tujuan","🎯","Tujuan"],["materi","📖","Materi"],["eksplor","🔍","Eksplorasi"],["lab","🧪","Lab Maya"],["game","🎮","Mini Game"],["lkpd","📝","LKPD"],["kuis","🧩","Kuis"],["simpul","📌","Kesimpulan"],["progres","📊","Progres"],["refleksi","💡","Refleksi"],["badge","🏆","Badge"]];
+const TASK={tujuan:"Apersepsi",materi:"Materi",eksplor:"Eksplorasi",lab:"Lab Maya",game:"Mini Game",lkpd:"LKPD",kuis:"Kuis Adaptif",simpul:"Kesimpulan",refleksi:"Refleksi"};
+const MAX=320;let S={p:0,d:{}};
+function toast(m){const t=$("#ts");t.textContent=m;t.className="on";setTimeout(()=>t.className="",1800)}
+function add(n){S.p+=n;$("#pts").textContent=S.p}
+function fin(k){if(S.d[k])return;S.d[k]=1;upd();toast("✅ Misi selesai! "+TASK[k])}
+function upd(){$("#bar").style.width=Object.keys(S.d).length/9*100+"%";document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("dn",!!S.d[b.dataset.k]))}
+function go(k){document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id==k));document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.k==k));scrollTo(0,0);if(k=="progres")prog();if(k=="badge")badge()}
+SEC.forEach(([k,i,t])=>{const b=el("button","",i+" "+t);b.dataset.k=k;b.onclick=()=>go(k);$("#nv").append(b)});
+function mcq(box,items,key,pt){let n=0;items.forEach((it,i)=>{const d=el("div","card");d.append(el("p","",`<b>${i+1}.</b> ${it.q}`));const fb=el("div","fb");it.o.forEach((o,j)=>{const b=el("button","opt",o);b.onclick=()=>{if(d.dataset.x)return;d.dataset.x=1;const c=j==it.a;b.classList.add(c?"ok":"no");d.children[1+it.a].classList.add("ok");if(c)add(pt);fb.className="fb show "+(c?"g":"b");fb.innerHTML=(c?"🎉 Tepat! ":"💭 Belum tepat. ")+it.f;if(++n==items.length&&key)fin(key)};d.append(b)});d.append(fb);box.append(d)})}
+mcq($("#ap"),[{q:"Kantin sekolah kotor dan harga naik tanpa pemberitahuan. Cara menyampaikan pendapat yang paling tepat?",o:["Mengunggah makian di media sosial","Menyampaikan lewat forum OSIS atau surat saran dengan alasan jelas","Diam saja","Memaksa teman memboikot kantin"],a:1,f:"Pendapat yang baik disampaikan santun, beralasan, dan lewat saluran yang tepat."}],"tujuan",10);
+const BP=["Lisan","Tulisan","Aksi damai","Media digital"];
+mcq($("#ex"),[
+{q:"Rani mengusulkan program kebersihan dalam rapat OSIS.",o:BP,a:0,f:"Disampaikan langsung dengan kata-kata, jadi bentuk lisan."},
+{q:"Pak Budi mengirim surat pembaca ke koran tentang jalan rusak.",o:BP,a:1,f:"Surat pembaca adalah pendapat tertulis di media cetak."},
+{q:"Warga berbaris membawa poster di depan DPRD setelah memberi pemberitahuan kepada Polri.",o:BP,a:2,f:"Unjuk rasa damai diatur UU No. 9 Tahun 1998 dan wajib diberitahukan."},
+{q:"Dimas membuat video sopan berisi data tentang sampah sungai dan mengunggahnya di platform video.",o:BP,a:3,f:"Media digital menjangkau luas, maka wajib berdasarkan fakta dan beretika."},
+{q:"Siswa menggalang tanda tangan petisi daring agar perpustakaan buka lebih lama.",o:BP,a:3,f:"Petisi daring memakai platform digital (isinya tertulis)."}],"eksplor",10);
+const IO=["Terbuka untuk publik","Dapat dikecualikan"];let n1=0;
+mcq($("#l1"),[
+{q:"Laporan penggunaan dana BOS sebuah sekolah negeri.",o:IO,a:0,f:"Penggunaan anggaran publik wajib transparan."},
+{q:"Rapor dan data pribadi seorang siswa.",o:IO,a:1,f:"Rahasia pribadi termasuk informasi yang dilindungi."},
+{q:"Anggaran dan realisasi APBD suatu daerah.",o:IO,a:0,f:"Informasi anggaran adalah informasi berkala yang harus diumumkan."},
+{q:"Rencana operasi penyelidikan polisi yang masih berjalan.",o:IO,a:1,f:"Dapat dikecualikan jika uji konsekuensi menunjukkan membuka informasi menghambat penegakan hukum."},
+{q:"Prosedur layanan pembuatan KTP.",o:IO,a:0,f:"Prosedur layanan adalah informasi yang tersedia setiap saat."}],null,10);
+{const st=["Ajukan permohonan ke PPID badan publik","Badan publik menjawab (maks. 10 hari kerja)","Jika ditolak, ajukan keberatan ke atasan PPID","Jika belum puas, ajukan sengketa ke Komisi Informasi"];let nx=0,l1d=0;const box=$("#l2"),m=el("div","fb");
+const chk=()=>{if(nx==4&&!l1d){l1d=1;fin("lab")}};
+[...st.keys()].sort(()=>Math.random()-.5).forEach(i=>{const b=el("button","opt",st[i]);b.onclick=()=>{if(b.disabled)return;if(i==nx){b.disabled=1;b.classList.add("ok");b.innerHTML=`<b>${++nx}.</b> `+st[i];m.className="fb show g";m.textContent="✔️ Benar!";if(nx==4){add(20);m.textContent="🎉 Prosedur lengkap! +20 poin"}}else{b.classList.add("no");setTimeout(()=>b.classList.remove("no"),600);m.className="fb show b";m.textContent="💭 Bukan langkah berikutnya, coba lagi."}};box.append(b)});box.append(m)
+const q=$("#l1");q.addEventListener("click",()=>setTimeout(()=>{if(q.querySelectorAll("[data-x]").length==5)l1d=2,mk()},50));
+function mk(){}
+box.addEventListener("click",()=>setTimeout(()=>{if(nx==4&&q.querySelectorAll("[data-x]").length==5)fin("lab");},80));q.addEventListener("click",()=>setTimeout(()=>{if(nx==4&&q.querySelectorAll("[data-x]").length==5)fin("lab")},80))}
+const D=[["Media sosial",90],["Diskusi/musyawarah",50],["Tulisan",24],["Aksi damai",16],["Lainnya",20]];
+$("#ch").innerHTML=D.map(([a,v])=>`<div class="row"><b>${a}</b><i style="width:${v*.6}%"></i> ${v}</div>`).join("");
+{let g=0;[["1. Berapa <b>persen</b> siswa yang memilih media sosial? (angka saja)",45,"90 ÷ 200 × 100 = 45%. Media sosial dominan, sehingga literasi digital sangat penting."],["2. Berapa <b>selisih</b> jumlah siswa pemilih diskusi dan tulisan?",26,"50 − 24 = 26 siswa."],["3. Berapa <b>persen</b> gabungan pemilih tulisan dan aksi damai?",20,"(24 + 16) ÷ 200 × 100 = 20%."]].forEach(([q,a,f])=>{const d=el("div","card",`<p>${q}</p>`),i=el("input"),b=el("button","btn","Cek"),fb=el("div","fb");i.type="number";i.inputMode="numeric";b.style.marginTop="8px";b.onclick=()=>{if(d.dataset.x)return;if(+i.value==a){d.dataset.x=1;add(15);fb.className="fb show g";fb.innerHTML="🎉 Benar! "+f;if(++g==3){fin("game")}}else{fb.className="fb show b";fb.textContent="💭 Belum tepat, hitung ulang dari grafik."}};d.append(i,b,fb);$("#gq").append(d)})}
+{let g=0;const L=[["1. Undang-undang Keterbukaan Informasi Publik adalah UU Nomor ___ Tahun 2008.",["14"],10,"UU No. 14 Tahun 2008 tentang KIP."],["2. Unit pelayan permintaan informasi di badan publik disebut ___ (singkatan).",["ppid"],10,"PPID: Pejabat Pengelola Informasi dan Dokumentasi."],["3. Numerasi: jawaban maksimal 10 hari kerja dan perpanjangan 7 hari kerja. Total maksimal ___ hari kerja.",["17"],10,"10 + 7 = 17 hari kerja."],["4. Studi kasus: mengapa pendapat tanpa data atau fakta dapat berbahaya? Tulis 2–3 kalimat.",null,15,"Hebat! Pendapat berbasis fakta dan sumber jelas mencegah hoaks dan fitnah."]].forEach(([q,a,p,f])=>{const d=el("div","card",`<p>${q}</p>`),i=el(a?"input":"textarea"),b=el("button","btn","Periksa"),fb=el("div","fb");if(!a)i.rows=3;b.style.marginTop="8px";b.onclick=()=>{if(d.dataset.x)return;const v=i.value.trim().toLowerCase();const ok=a?a.some(x=>v==x||v.replace(/\D/g,"")==x):v.length>=40;if(ok){d.dataset.x=1;add(p);fb.className="fb show g";fb.textContent="🎉 "+f+(a?"":(/hoaks|data|fakta|bukti|sumber/.test(v)?" Kata kunci fakta/data sudah muncul, bagus!":" Coba tambahkan kata seperti fakta, data, atau hoaks."));if(++g==4)fin("lkpd")}else{fb.className="fb show b";fb.textContent=a?"💭 Belum tepat, baca lagi materinya.":"💭 Tulis minimal 2 kalimat."}};d.append(i,b,fb);$("#lk").append(d)})}
+const B=[[{q:"Surat pembaca di koran termasuk bentuk penyampaian pendapat secara…",o:["Lisan","Tulisan","Unjuk rasa","Musyawarah"],a:1,f:"Surat pembaca adalah tulisan."},{q:"Kemerdekaan berpendapat dijamin dalam UUD 1945 Pasal…",o:["28E ayat (3)","31","33","27"],a:0,f:"Pasal 28E ayat (3)."}],
+[{q:"Pemberitahuan unjuk rasa kepada Polri disampaikan paling lambat…",o:["1x24 jam","3x24 jam","7 hari","Tidak perlu"],a:1,f:"UU No. 9 Tahun 1998: 3x24 jam sebelumnya."},{q:"Informasi yang wajib diumumkan rutin oleh badan publik disebut informasi…",o:["Serta-merta","Berkala","Dikecualikan","Rahasia"],a:1,f:"Informasi berkala, mis. laporan keuangan."}],
+[{q:"Mengapa informasi tertentu boleh dikecualikan?",o:["Agar pejabat leluasa","Setelah uji konsekuensi, pembukaannya dapat merugikan kepentingan yang dilindungi hukum","Karena rakyat tak perlu tahu","Karena biayanya mahal"],a:1,f:"Pengecualian harus ketat, terbatas, dan melalui uji konsekuensi."},{q:"Unggahan berisi hoaks dan hinaan di media sosial…",o:["Tetap dilindungi penuh","Melampaui batas kemerdekaan berpendapat","Wajib dimuat","Kebebasan mutlak"],a:1,f:"Pasal 28J: hak dibatasi demi menghormati hak orang lain."}]];
+{let lv=1,n=0,sc=0,u=[];const bx=$("#kz");const nx=()=>{bx.innerHTML="";if(n==5){bx.innerHTML=`<div class="card"><h3>🎯 Skor kuis: ${sc}/100</h3><p>${sc>=80?"Luar biasa!":sc>=50?"Bagus, terus berlatih!":"Ayo ulangi materinya, kamu pasti bisa!"}</p></div>`;fin("kuis");return}
+let c,cl;for(const l of [lv,lv+1,lv-1,lv+2,lv-2]){if(l<0||l>2)continue;c=B[l].find(q=>!u.includes(q));if(c){cl=l;break}}u.push(c);
+const d=el("div","card",`<span class="tag">Level: ${["Mudah","Sedang","Tantang"][cl]}</span><p><b>Soal ${n+1}/5.</b> ${c.q}</p>`),fb=el("div","fb");
+c.o.forEach((o,j)=>{const b=el("button","opt",o);b.onclick=()=>{if(d.dataset.x)return;d.dataset.x=1;const ok=j==c.a;b.classList.add(ok?"ok":"no");d.children[2+c.a].classList.add("ok");if(ok){sc+=20;add(20);lv=Math.min(2,cl+1)}else lv=Math.max(0,cl-1);n++;fb.className="fb show "+(ok?"g":"b");fb.innerHTML=(ok?"🎉 Benar! ":"💭 Belum tepat. ")+c.f+" Soal berikutnya: level "+["mudah","sedang","tantang"][lv]+".";const nb=el("button","btn",n==5?"Lihat skor":"Lanjut ▶");nb.style.marginTop="8px";nb.onclick=nx;d.append(nb)};d.append(b)});d.append(fb);bx.append(d)};nx()}
+function prog(){const n=Object.keys(S.d).length;$("#pr").innerHTML=`<p><b>${Math.round(n/9*100)}%</b> misi selesai · ⭐ ${S.p} / ${MAX} poin</p>`+Object.entries(TASK).map(([k,t])=>`<div class="row"><b>${t}</b><i style="width:${S.d[k]?60:4}%;background:${S.d[k]?"var(--ok)":"var(--bd)"}"></i>${S.d[k]?"✓":""}</div>`).join("")}
+["😄","🙂","😐","😕"].forEach(e=>{const b=el("button","",e);b.style.cssText="border:1px solid var(--bd);background:var(--cd);border-radius:12px;font-size:2rem;cursor:pointer";b.onclick=()=>{document.querySelectorAll("#mo button").forEach(x=>x.style.borderColor="var(--bd)");b.style.borderColor="var(--pr)"};$("#mo").append(b)});
+function rf(){if($("#r1").value.trim().length<10||$("#r2").value.trim().length<10)return toast("Isi kedua refleksi minimal 10 huruf ✏️");fin("refleksi");toast("💡 Terima kasih atas refleksimu!")}
+function badge(){const B=[["🎤","Penyuara","eksplor"],["🕵️","Detektif Informasi","lab"],["📊","Pemecah Data","game"],["🧠","Pemikir Kritis","kuis"],["🌟","Warga Cerdas","*"]];
+$("#bg").innerHTML=B.map(([i,t,k])=>`<div class="bd ${(k=="*"?Object.keys(S.d).length==9:S.d[k])?"on":""}"><div>${i}</div><b>${t}</b></div>`).join("");
+$("#ce").innerHTML=Object.keys(S.d).length==9?`<div class="cert"><div style="font-size:2.5rem">🏅</div><b>SMPIT Titian Ilmu</b><p>Sertifikat ini diberikan kepada</p><h3>${($("#nm").value.trim()||"Peserta Didik").replace(/</g,"&lt;")}</h3><p>yang telah menuntaskan pembelajaran <b>Kemerdekaan Berpendapat</b> (Pendidikan Pancasila Kelas IX) dengan skor <b>${S.p}/${MAX}</b></p><p>${new Date().toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"})}</p></div><p class="np"><button class="btn" onclick="print()">🖨️ Cetak sertifikat</button></p>`:`<div class="card">🔒 Selesaikan 9 misi (lihat tab Progres) untuk membuka sertifikat.</div>`}
+go("home");
+</script></body></html>
